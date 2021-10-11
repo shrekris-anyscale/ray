@@ -748,7 +748,7 @@ def build_eager_tf_policy(
 
             # Calculate the loss(es) inside a tf GradientTape.
             with tf.GradientTape(persistent=compute_gradients_fn is not None) \
-                as tape:
+                    as tape:
                 losses = loss_fn(self, self.model, self.dist_class, samples)
             losses = force_list(losses)
 
